@@ -212,10 +212,10 @@ C++98相关工作的核心是这篇HOPL3的论文[[Stroustrup 2007]()]，所以�
 void do_something(Shape* p) 
 { 
     if(Circle* pc = dynamic_cast<Circle*>(p)) { // p是一个circle吗？
-    // ... 使用pc指向的Circle ... 
+    	// ... 使用pc指向的Circle ... 
     } 
     else { 
-    // ... 它不是个circle，干点别的 ... 
+    	// ... 它不是个circle，干点别的 ... 
     } 
 }  
 ```
@@ -266,8 +266,8 @@ class File_handle {
 ```c++
 void my_fct2(const char* name)  // RAII风格的资源管理
 { 
-File_handle p( name ," r ");  // 为了读取打开文件name 
-// ... 使用p ... 
+	File_handle p( name ," r ");  // 为了读取打开文件name 
+	// ... 使用p ... 
 } // p被隐式地关闭了
 ```
 
@@ -310,11 +310,11 @@ void test(vector<string>& v, list<int>& lst)
 { 
     vector<string>::iterator p 
     	= find_if(v.begin(), v.end(), Less_than<string>("falcon")); 
-    if (p != v.end()) {  // p points to ' falcon ' 
-    // ... use *p ... 
+    if (p != v.end()) {  // p指向'falcon' 
+    	// ... 使用 *p ... 
     } 
-    else {  // ' falcon ' not found 
-    // ... 
+    else {  // 'falcon'未找到
+    	// ... 
     } 
     list<int>::iterator q //译者注：原文是vector，应为笔误。 
     	= find_if(lst.begin(), lst.end(), Greater_than<int>(42)); 
